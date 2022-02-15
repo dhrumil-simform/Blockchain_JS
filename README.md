@@ -1,4 +1,4 @@
 # Blockchain_JS
 
-Created a Blockchain with basic functionalities in Javascript
-Open in live server
+Created a Blockchain with basic functionalities in Javascript.
+Open in live server to run the code
