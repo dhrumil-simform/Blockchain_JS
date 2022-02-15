@@ -9,9 +9,6 @@ class Block{
         this.previousHash = previousHash;
         this.hash = this.calculateHash();
         this.nonce = 0;
-        if(typeof(this.data)!="string"){
-            this.data=merkleTree(this.data);
-        }
     }
 
     calculateHash(){
@@ -65,9 +62,9 @@ class Blockchain{
             const curr_block = this.bchain[i];
             const prev_block = this.bchain[i-1];
             //Checking if current block data has not changed
-            if(curr_block.hash !== curr_block.calculateHash()){ return false; }
+            if(curr_block.hash != curr_block.calculateHash()){ return false; }
             //Checking if hash of the previous block is same
-            if(curr_block.previousHash !== prev_block.hash){ return false; }
+            if(curr_block.previousHash != prev_block.hash){ return false; }
         }
         return true;
     }
@@ -88,4 +85,4 @@ samp.addBlock(new Block(2,[{from:'dhrumil',to:'karan',amount:250}, {from:'rohit'
 console.log(JSON.stringify(samp, null, 2));
 
 //Checking the validity of the blockchain
-console.log(samp.checkValidity())
+console.log("Validity of Blockchain : "+samp.checkValidity())
