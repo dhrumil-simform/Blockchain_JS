@@ -25,7 +25,9 @@ function merkleTree(transactionsList){
         }
         hashes = tempArr;
     }
-    return hashes[0];
+    var merkleRoot = hashes[0];
+    hashes=[];
+    return merkleRoot;
 }
 
 export {merkleTree};
